@@ -1,4 +1,4 @@
-name: 'Publish Schedule Action'
+name: 'Markdown Publish Schedule'
 description: 'Parses the publish date from Markdown file front matters to see whether there is scheduled content that needs to be published'
 inputs:
   time_range_minutes:
