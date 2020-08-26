@@ -1,0 +1,33 @@
+{
+  "name": "publish-schedule-action",
+  "version": "1.0.0",
+  "description": "Parses the publish date from Markdown file front matters to see whether there is scheduled content that needs to be published",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ncc build index.js -o dist/index.js --source-map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jannekem/publish-schedule-action.git"
+  },
+  "keywords": [
+    "GitHub",
+    "Actions"
+  ],
+  "author": "Janne Kemppainen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jannekem/publish-schedule-action/issues"
+  },
+  "homepage": "https://github.com/jannekem/publish-schedule-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "gray-matter": "^4.0.2",
+    "moment": "^2.27.0",
+    "recursive-readdir": "^2.2.2"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.24.0"
+  }
+}
