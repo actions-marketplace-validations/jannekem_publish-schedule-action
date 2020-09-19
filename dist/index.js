@@ -10,7 +10,7 @@ const recursiveReaddir = __webpack_require__(6715);
 const matter = __webpack_require__(5382);
 const moment = __webpack_require__(9623);
 
-const timeRangeInMinutes = core.getInput('time_range_minutes', {required: true});
+const timeRangeInMinutes = core.getInput('interval', {required: true});
 const endTime = moment.utc().seconds(0);
 const startTime = endTime.clone().subtract(parseInt(timeRangeInMinutes), 'minutes');
 const contentDir = core.getInput('content_directory', {default: ''});
@@ -32,7 +32,7 @@ function shouldPublish(filename) {
     const file = matter.read(filename);
     if ('date' in file.data) {
         const date = moment.utc(file.data.date);
-        return date.isBefore(endTime) && date.isAfter(startTime);
+        return !date.isAfter(endTime) && date.isAfter(startTime);
     }
     return false;
 }
