@@ -1,7 +1,7 @@
 name: 'Markdown Publish Schedule'
 description: 'Parses the publish date from Markdown file front matters to see whether there is scheduled content that needs to be published'
 inputs:
-  time_range_minutes:
+  interval:
     description: 'number of minutes from the current time that should be included for the check'
     required: true
   content_directory:
