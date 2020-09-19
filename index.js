@@ -25,7 +25,7 @@ function shouldPublish(filename) {
     const file = matter.read(filename);
     if ('date' in file.data) {
         const date = moment.utc(file.data.date);
-        return date.isBefore(endTime) && date.isAfter(startTime);
+        return !date.isAfter(endTime) && date.isAfter(startTime);
     }
     return false;
 }
